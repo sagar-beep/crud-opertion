@@ -1,0 +1,30 @@
+<h3><a class="btn btn-secondary" href="/employee"><i class="fa fa-plus"></i> Create New Task</a> Task List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Taskname</th>
+            <th>creation_timestamp</th>
+            <th>edit_timestamp</th>
+            <th>expiry</th>
+            <th>completion_status</th>
+            <th>createdBy</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.Taskname}}</td>
+            <td>{{this.creation_timestamp}}</td>
+            <td>{{this.edit_timestamp}}</td>
+            <td>{{this.expiry}}</td>
+            <td>{{this.completion_status}}</td>
+            <td>{{this.createdBy}}</td>
+            <td>
+                <a href="/employee/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/employee/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
